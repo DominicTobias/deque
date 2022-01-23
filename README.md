@@ -1,6 +1,6 @@
 # deque
 
-This is a fork of [github.com/gammazero/deque](https://github.com/gammazero/deque) to switch to Generics in order to improve performance. Here are the results:
+This is a fork of [github.com/gammazero/deque](https://github.com/gammazero/deque) to switch to Generics in order to improve performance (Go 1.18+). Here are the results:
 
 ## no generics
 
