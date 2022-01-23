@@ -1,5 +1,41 @@
 # deque
 
+This is a fork of [github.com/gammazero/deque](https://github.com/gammazero/deque) to switch to Generics in order to improve performance. Here are the results:
+
+## no generics
+
+```
+goos: darwin
+goarch: amd64
+cpu: VirtualApple @ 2.50GHz
+BenchmarkPushFront-10        	   10000	    25.81 ns/op
+BenchmarkPushBack-10         	   10000	    40.87 ns/op
+BenchmarkSerial-10           	   10000	    40.05 ns/op
+BenchmarkSerialReverse-10    	   10000	    30.43 ns/op
+BenchmarkRotate-10           	   10000	    30122 ns/op
+BenchmarkInsert-10           	   10000	    29192 ns/op
+BenchmarkRemove-10           	   10000	    13927 ns/op
+BenchmarkYoyo-10             	   10000	    1801284 ns/op
+BenchmarkYoyoFixed-10        	   10000	    1136005 ns/op
+```
+
+## generics (2-3x faster)
+
+```
+goos: darwin
+goarch: amd64
+cpu: VirtualApple @ 2.50GHz
+BenchmarkPushFront-10        	   10000	    9.846 ns/op
+BenchmarkPushBack-10         	   10000	    10.04 ns/op
+BenchmarkSerial-10           	   10000	    11.08 ns/op
+BenchmarkSerialReverse-10    	   10000	    26.22 ns/op
+BenchmarkRotate-10           	   10000	    11047 ns/op
+BenchmarkInsert-10           	   10000	    15644 ns/op
+BenchmarkRemove-10           	   10000	    5203 ns/op
+BenchmarkYoyo-10             	   10000	    561729 ns/op
+BenchmarkYoyoFixed-10        	   10000	    393723 ns/op
+```
+
 [![GoDoc](https://pkg.go.dev/badge/github.com/sekoyo/deque)](https://pkg.go.dev/github.com/sekoyo/deque)
 [![Build Status](https://github.com/sekoyo/deque/actions/workflows/go.yml/badge.svg)](https://github.com/sekoyo/deque/actions/workflows/go.yml)
 [![Go Report Card](https://goreportcard.com/badge/github.com/sekoyo/deque)](https://goreportcard.com/report/github.com/sekoyo/deque)
