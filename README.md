@@ -2,7 +2,7 @@
 
 This is a fork of [github.com/gammazero/deque](https://github.com/gammazero/deque) to switch to Generics in order to improve performance (Go 1.18+). Here are the results:
 
-## no generics
+### no generics
 
 ```
 goos: darwin
@@ -19,7 +19,7 @@ BenchmarkYoyo-10             	   10000	    1801284 ns/op
 BenchmarkYoyoFixed-10        	   10000	    1136005 ns/op
 ```
 
-## generics (2-3x faster)
+### generics (2-3x faster)
 
 ```
 goos: darwin
