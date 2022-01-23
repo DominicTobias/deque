@@ -1,3 +1,3 @@
-module github.com/gammazero/deque
+module github.com/sekoyo/deque
 
-go 1.15
+go 1.18
