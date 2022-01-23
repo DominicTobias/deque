@@ -79,7 +79,7 @@ import (
 )
 
 func main() {
-    var q deque.Deque
+    var q deque.Deque[string]
     q.PushBack("foo")
     q.PushBack("bar")
     q.PushBack("baz")
