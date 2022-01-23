@@ -5,8 +5,7 @@ This is a fork of [github.com/gammazero/deque](https://github.com/gammazero/dequ
 #### no generics
 
 ```
-goos: darwin
-goarch: amd64
+go: go1.18beta1 darwin/amd64
 cpu: VirtualApple @ 2.50GHz
 BenchmarkPushFront-10        	   10000	    25.81 ns/op
 BenchmarkPushBack-10         	   10000	    40.87 ns/op
@@ -22,8 +21,7 @@ BenchmarkYoyoFixed-10        	   10000	    1136005 ns/op
 #### generics (2-3x faster)
 
 ```
-goos: darwin
-goarch: amd64
+go1.18beta1 darwin/amd64
 cpu: VirtualApple @ 2.50GHz
 BenchmarkPushFront-10        	   10000	    9.846 ns/op
 BenchmarkPushBack-10         	   10000	    10.04 ns/op
