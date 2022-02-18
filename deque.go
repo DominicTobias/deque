@@ -17,7 +17,7 @@ type Deque[T any] struct {
 // when non-zero values are given for these.
 //
 // To create a Deque with capacity to store 2048 items without resizing, and
-// that will not resize below space for 32 items when removing itmes:
+// that will not resize below space for 32 items when removing items:
 //   d := deque.New(2048, 32)
 //
 // To create a Deque that has not yet allocated memory, but after it does will
@@ -56,11 +56,17 @@ func New[T any](size ...int) *Deque[T] {
 
 // Cap returns the current capacity of the Deque.
 func (q *Deque[T]) Cap() int {
+	if q == nil {
+		return 0
+	}
 	return len(q.buf)
 }
 
 // Len returns the number of elements currently stored in the queue.
 func (q *Deque[T]) Len() int {
+	if q == nil {
+		return 0
+	}
 	return q.count
 }
 
@@ -197,7 +203,7 @@ func (q *Deque[T]) Clear() {
 // back-to-front.  Having Deque provide Rotate() avoids resizing that could
 // happen if implementing rotation using only Pop and Push methods.
 func (q *Deque[T]) Rotate(n int) {
-	if q.count <= 1 {
+	if q.Len() <= 1 {
 		return
 	}
 	// Rotating a multiple of q.count is same as no rotation.
